@@ -3,12 +3,11 @@ version: 2
 sources:
     - name: staging
       #For bigquery:
-      #database: taxi-rides-ny-339813
-
+      database: favorable-tree-346416
       # For postgres:
-      database: production
+      # database: production
 
-      schema: trips_data_all
+      schema: ny_taxi
 
       # loaded_at_field: record_loaded_at
       tables:
