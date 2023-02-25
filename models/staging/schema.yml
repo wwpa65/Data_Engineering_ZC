@@ -3,21 +3,35 @@ version: 2
 sources:
     - name: staging
       #For bigquery:
-      #database: taxi-rides-ny-339813
+      database: favorable-tree-346416
 
       # For postgres:
-      database: favorable-tree-346416
+      # database: favorable-tree-346416
 
       schema: ny_taxi
 
       # loaded_at_field: record_loaded_at
       tables:
+        - name: fhv_tripdata
         - name: green_tripdata
         - name: yellow_tripdata
          # freshness:
            # error_after: {count: 6, period: hour}
 
 models:
+    - name: fhv_tripdata
+      description: >
+        The For-Hire Vehicle ("FHV") trip records include fields capturing the dispatching 
+        base license number and the pick-up date, time, and taxi zone location ID (shape file below). 
+      columns:
+        - name: dispatching_base_num
+        - name: pickup_datetime
+        - name: dropoff_datetime
+        - name: pickup_locationid
+        - name: dropoff_locationid 
+        - name: SR_Flag 
+        - name: Affiliated_base_number 
+
     - name: stg_green_tripdata
       description: >
         Trip made by green taxis, also known as boro taxis and street-hail liveries.
