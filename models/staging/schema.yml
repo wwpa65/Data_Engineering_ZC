@@ -3,12 +3,12 @@ version: 2
 sources:
     - name: staging
       #For bigquery:
-      database: favorable-tree-346416
+      database: dbt-setup-learn
 
       # For postgres:
       # database: favorable-tree-346416
 
-      schema: ny_taxi
+      schema: ny_taxi_data
 
       # loaded_at_field: record_loaded_at
       tables:
